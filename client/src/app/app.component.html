@@ -1,0 +1,7 @@
+<!-- {title} comes from app.component.ts-->
+<h1>{{title}}</h1>
+
+<ul>
+  <!-- Loop through using structural directive-->
+  <li *ngFor='let user of users'>{{user.id}} - {{user.userName}}</li>
+</ul>

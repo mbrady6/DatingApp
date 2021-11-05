@@ -1,7 +1,16 @@
 <!-- {title} comes from app.component.ts-->
-<h1>{{title}}</h1>
+<!--<h1>{{title}}</h1>-->
 
-<ul>
-  <!-- Loop through using structural directive-->
-  <li *ngFor='let user of users'>{{user.id}} - {{user.userName}}</li>
-</ul>
+<!-- app-nav is declared in nav.components.ts-->
+<app-nav></app-nav>
+
+<div class="container" style="margin-top: 100px">
+  <ul>
+    <!-- Loop through using structural directive-->
+    <!--  Leaving for demo purposes -->
+    <!--  <li *ngFor='let user of users'>{{user.id}} - {{user.userName}}</li>-->
+
+    <app-home></app-home>
+  </ul>
+</div>
+

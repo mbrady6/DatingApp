@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
+using API.Helpers;
 using API.Interfaces;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,8 @@ namespace API.Extensions
             // AddScoped considered most appropriate for HttpRequests. Heavily used.
             // Interface isn't technically needed but aids in testing later, allows for mockups. Best practice.
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddDbContext<DataContext>(options => 
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
